@@ -85,7 +85,7 @@ exports.uploadBAPBSignature = async (req, res) => {
 
     if (error) throw error;
 
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       message: 'Signature uploaded successfully',
       data: {
@@ -140,7 +140,7 @@ exports.getBAPBSignatures = async (req, res) => {
 exports.checkSignatureStatus = async (req, res) => {
   try {
     const { id } = req.params;
-    const { type } = req.query; // 'bapb' or 'bapp'
+    const { type } = req.query; 
     const userId = req.user.id;
 
     const tableName = type === 'bapp' ? 'bapp_attachments' : 'bapb_attachments';
@@ -306,7 +306,7 @@ exports.getBAPPSignatures = async (req, res) => {
 exports.deleteSignature = async (req, res) => {
   try {
     const { id, attachmentId } = req.params;
-    const { type } = req.query; // 'bapb' or 'bapp'
+    const { type } = req.query; 
 
     const tableName = type === 'bapb' ? 'bapb_attachments' : 'bapp_attachments';
     const foreignKey = type === 'bapb' ? 'bapb_id' : 'bapp_id';
