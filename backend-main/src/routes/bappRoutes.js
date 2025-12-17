@@ -9,7 +9,6 @@ const { protect, authorize, authorizeVendorType } = require('../middlewares/auth
 const { validateBAPP, validateUUIDParam } = require('../middlewares/validationMiddleware');
 
 // ==================== BAPP UTILITY ROUTES (HARUS DI ATAS) ====================
-// PENTING: Routes tanpa :id parameter harus di atas routes dengan :id
 
 /**
  * @route   GET /api/bapp/validate-access
